@@ -49,16 +49,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fee_management.wsgi.application'
 
 # 🔹 MySQL DATABASE CONNECTION
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fee_management_db',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '3306',
+import os
+
+if os.environ.get('RENDER'):
+    # Render / production → SQLite
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    # Local development → MySQL
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'exam_management_db',
+            'USER': 'root',
+            'PASSWORD': '123456',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
+
 
 AUTH_PASSWORD_VALIDATORS = []
 
