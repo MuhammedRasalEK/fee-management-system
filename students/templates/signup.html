@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body { margin:0; font-family:Poppins; background:#f4f7f6; }
+        .split { display:flex; min-height:100vh; }
+        .left { width:45%; background:linear-gradient(135deg,#FF416C,#FF4B2B); color:#fff; padding:60px; }
+        .right { flex:1; display:flex; justify-content:center; align-items:center; }
+        .card { width:420px; background:#fff; padding:40px; border-radius:15px; box-shadow:0 20px 40px rgba(0,0,0,.1); }
+        input,button { width:100%; padding:12px; margin-top:12px; border-radius:8px; border:1px solid #ccc; }
+        button { background:#FF416C; color:#fff; border:none; }
+    </style>
+</head>
+<body>
+
+<div class="split">
+    <div class="left">
+        <h1>Student Registration</h1>
+        <p>Create your account to manage fee details.</p>
+    </div>
+
+    <div class="right">
+        <form class="card" method="post">
+            {% csrf_token %}
+            <h2>Sign Up</h2>
+            <input name="username" placeholder="Username">
+            <input name="admission_no" placeholder="Admission No">
+            <input name="department" placeholder="Department">
+            <input name="semester" placeholder="Semester">
+            <input type="date" name="dob">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

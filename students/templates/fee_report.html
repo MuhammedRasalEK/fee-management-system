@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fee Report</title>
+    <style>
+        body { font-family:Poppins; background:#f4f7f6; padding:30px; }
+        table { width:100%; background:#fff; border-collapse:collapse; }
+        th,td { padding:12px; border-bottom:1px solid #ddd; }
+        th { background:#2c3e50; color:#fff; }
+    </style>
+</head>
+<body>
+
+<h2>Fee Report</h2>
+
+<table>
+<tr>
+    <th>Bank</th><th>Transaction</th><th>Amount</th><th>Date</th>
+</tr>
+{% for p in payments %}
+<tr>
+    <td>{{ p.bank_name }}</td>
+    <td>{{ p.transaction_id }}</td>
+    <td>₹{{ p.amount }}</td>
+    <td>{{ p.date }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

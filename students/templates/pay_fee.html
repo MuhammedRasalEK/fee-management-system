@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Fee</title>
+    <style>
+        body { font-family:Poppins; background:#f4f7f6; display:flex; justify-content:center; align-items:center; height:100vh; }
+        .card { width:550px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,.1); }
+        input,button { width:100%; padding:12px; margin-top:15px; }
+        button { background:#FF416C; color:#fff; border:none; }
+    </style>
+</head>
+<body>
+
+<form class="card" method="post">
+    {% csrf_token %}
+    <h2>Pay Fee</h2>
+    <input name="bank" placeholder="Bank Name">
+    <input name="transaction" placeholder="Transaction ID">
+    <input name="amount" placeholder="Amount">
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

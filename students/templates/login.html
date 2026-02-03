@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body { margin:0; font-family:Poppins; background:#f4f7f6; }
+        .split { display:flex; min-height:100vh; }
+        .left { width:45%; background:linear-gradient(135deg,#FF416C,#FF4B2B); color:#fff; padding:60px; }
+        .right { flex:1; display:flex; justify-content:center; align-items:center; }
+        .card { width:380px; background:#fff; padding:40px; border-radius:15px; box-shadow:0 20px 40px rgba(0,0,0,.1); }
+        input,button { width:100%; padding:12px; margin-top:15px; border-radius:8px; border:1px solid #ccc; }
+        button { background:#FF416C; color:#fff; border:none; cursor:pointer; }
+        a { color:#FF416C; text-decoration:none; }
+    </style>
+</head>
+<body>
+
+<div class="split">
+    <div class="left">
+        <h1>Fee Management System</h1>
+        <p>Manage student fee records easily and securely.</p>
+    </div>
+
+    <div class="right">
+        <form class="card" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+            <p>New user? <a href="/signup/">Sign up</a></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

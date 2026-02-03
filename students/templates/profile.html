@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <style>
+        body { font-family:Poppins; background:#f4f7f6; display:flex; justify-content:center; align-items:center; height:100vh; }
+        .card { width:400px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,.1); }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Profile</h2>
+    <p>Name: {{ request.user.username }}</p>
+    <p>Admission No: {{ profile.admission_no }}</p>
+    <p>Department: {{ profile.department }}</p>
+    <p>Semester: {{ profile.semester }}</p>
+</div>
+
+</body>
+</html>
