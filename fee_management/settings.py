@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-change-this'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -70,8 +70,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "students" / "static",
-]
+
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
